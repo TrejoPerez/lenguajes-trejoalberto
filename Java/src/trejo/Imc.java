@@ -35,25 +35,25 @@ public class Imc {
         
     }
     public String calcular() {
+        String valor="";
         float resultadoImc=peso/(altura*altura);
         if(resultadoImc<20){
-            System.out.print("Eres anorexico, te moriras"+resultadoImc);
-            
+            valor ="Eres anorexico, te moriras, tu peso es: "+resultadoImc;
         }
         if(resultadoImc>=20 && resultadoImc<=25){
-            System.out.print("Estas bien sano"+resultadoImc);
+            valor="Estas bien sano, tu peso es: "+resultadoImc;
             
         }
         if(resultadoImc>=25 && resultadoImc<=30){
-            System.out.print("Te pasate de tamales"+resultadoImc);
+            valor = "Te pasate de tamales, tu peso es: "+resultadoImc;
             
         }
         if(resultadoImc>=30 && resultadoImc<=35){
-            System.out.print("eres un tinaco con patas"+resultadoImc);
+            valor ="eres un tinaco con patas, tu peso es: "+resultadoImc;
             
         }
         
-        //return ;
+        return valor;
     }
     
     
