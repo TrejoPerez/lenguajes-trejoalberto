@@ -3,10 +3,11 @@ package trejo;
 public class Imc {
     float peso;
     float altura;
+    float resultado;
     
-    public Imc() {
-        peso=55.5f;
-        altura=77.7f;
+    public Imc(float pe,float al) {
+        peso=pe;
+        altura=al;
     }
    
     // Regla numero uno de consultores 
@@ -16,7 +17,7 @@ public class Imc {
     
    
     public Imc(float f){
-    //Este codigo no tiene nada que ver con los constructores 
+    /*Este codigo no tiene nada que ver con los constructores 
         byte b=12;
         short s=2;
         int i=2;
@@ -30,11 +31,30 @@ public class Imc {
         s=(short)l;
         s=(short)i;
         l=b;
-                        
+      */                  
         
     }
-    public float calcular() {
+    public String calcular() {
         float resultadoImc=peso/(altura*altura);
-        return resultadoImc;
+        if(resultadoImc<20){
+            System.out.print("Eres anorexico, te moriras"+resultadoImc);
+            
+        }
+        if(resultadoImc>=20 && resultadoImc<=25){
+            System.out.print("Estas bien sano"+resultadoImc);
+            
+        }
+        if(resultadoImc>=25 && resultadoImc<=30){
+            System.out.print("Te pasate de tamales"+resultadoImc);
+            
+        }
+        if(resultadoImc>=30 && resultadoImc<=35){
+            System.out.print("eres un tinaco con patas"+resultadoImc);
+            
+        }
+        
+        //return ;
     }
+    
+    
 }
