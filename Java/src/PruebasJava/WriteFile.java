@@ -23,30 +23,21 @@ public class WriteFile {
             String cuenta="";
             String lep="";
             
-            while(lep!=null){
-                lep=buffer.readLine();
-                if(lep==null){
-                    System.out.println(lep);
-                    System.out.println("if1");
-                       break;
-                }   
-                
-            }
-            FileWriter fwriter= new FileWriter(f);
+           
+            FileWriter fwriter= new FileWriter(f,true);
             BufferedWriter bwriter = new BufferedWriter(fwriter);
             PrintWriter pwriter = new PrintWriter(bwriter);
-            while(cuenta !=null){
-                cuenta = buffer.readLine();
-                if(cuenta==null){
-                    System.out.println("Entraste");
-                    pwriter.write(cuenta+"ased");
-                    break;
-                }
-            }
+            pwriter.write("trejo\n");
             
             bwriter.close();
             pwriter.close();
-            System.out.println(buffer.readLine());
+             while(lep!=null){
+                lep=buffer.readLine();
+                if(lep==null)
+                    break;
+                System.out.println(lep);
+                
+            }
            
             //lee = buffer.readLine();
             
