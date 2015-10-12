@@ -1,6 +1,7 @@
 
 package archivaldo;
 import java.io.*;
+
 public class Galeria implements Serializable{
     private String titulo;
     private String descripcion;

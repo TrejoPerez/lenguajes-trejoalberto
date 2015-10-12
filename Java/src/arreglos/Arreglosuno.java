@@ -13,7 +13,13 @@ public class Arreglosuno {
         //Inicializacion explicita              
         int []y={7,-20,15};
         //Inicializacion implicita
-        int z[]=new int [4];
+        int []z=new int [4];
+        z[0]=1;
+        z[1]=2;
+        z[2]=3;
+        z[3]=4;
+       // z[4]=5;
+        //z[5]=6;
         //Arreglo de referenciados
         String mensaje[]={"Hola", "como", "estas?"};
         System.out.println(x);
@@ -24,9 +30,9 @@ public class Arreglosuno {
             }//fin del ciclo
             //Ciclo for mejorado:
             //for(tipo de variable -variable-:arreglo)
-            for(String valor:mensaje){
-                System.out.println(valor);
-                if(valor.equals("como"))break;
+            for(String imprime:mensaje){
+                System.out.println(imprime);
+                if(imprime.equals("como"))break;
             }
     }
 }
