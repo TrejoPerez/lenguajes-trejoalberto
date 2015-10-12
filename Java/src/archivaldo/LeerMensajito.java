@@ -13,7 +13,10 @@ public class LeerMensajito {
         ObjectInputStream ois=new ObjectInputStream(fis);
         //creamos el objeto que leera
         //Se le aplico un casting a algodon, ya que se estan usando strings y solo se hace en no primitivos
+        // String mensajito="Este es otro archivo"; 
+        //Estoy guardando un String de la clase wraper y por eso se le hace el casting
         String algodon=(String) ois.readObject();
+
         System.out.println(algodon);
         
     }
