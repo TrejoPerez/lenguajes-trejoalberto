@@ -14,5 +14,6 @@ public class ProbarColecciones {
     public static void main(String[] args) {
         PersistenciaUsuarios  p = new PersistenciaUsuarios();
         System.out.println(p.obtenerUsuario().size());
+        //Iterar todo el array
     }
 }
