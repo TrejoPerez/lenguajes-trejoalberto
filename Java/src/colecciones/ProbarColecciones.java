@@ -15,5 +15,9 @@ public class ProbarColecciones {
         PersistenciaUsuarios  p = new PersistenciaUsuarios();
         System.out.println(p.obtenerUsuario().size());
         //Iterar todo el array
-    }
+        
+        for(Usuario u: p.obtenerUsuario()){
+            System.out.println("El login es " + u.getLogin()+ "Vive en la calle " + u.getDireccion().getCalle());
+        }
+    }  
 }
