@@ -23,8 +23,8 @@ public class ProbarSerializacion {
             //Ahora fijense bien como usamos la clase persistencia
                 PersistenciaUsuarios2 p2 = new PersistenciaUsuarios2();
                 try{
-                    p2.guardar(u);
-                    System.out.println("Ese usuario se guardo con exito");                   
+                   // p2.guardar(u);
+                    System.out.println(p2.buscarTodos());                   
                 }catch(Exception e){
                     System.out.println(e.getMessage());
                 }                  

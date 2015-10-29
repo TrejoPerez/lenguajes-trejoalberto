@@ -14,21 +14,28 @@ public class PersistenciaUsuarios2 {
     
     public void guardar(Usuario u) throws Exception {
     //este es el mas dificil, porque este usa el de abajo
-        File f=new File ("D:/usuario.sql");
+        File f=new File ("/root/Exploiter/persistencia.ped");
         if(f.exists())usuarios=buscarTodos();
         FileOutputStream fos = new FileOutputStream(f);
         ObjectOutputStream oos = new ObjectOutputStream(fos);
         usuarios.add(u);
         oos.writeObject(usuarios);
     }
+    
     public ArrayList<Usuario> buscarTodos()throws Exception{
         //Aqui va toda la tarea (facil)
-        File file = new File("D:/usuario.sql");
+        File file = new File("/root/Exploiter/persistencia.ped");
         FileInputStream fis = new FileInputStream(file);
         ObjectInputStream ois = new ObjectInputStream(fis);
         //Se aplica el casting porque se esta regresa un arreglo
         usuarios =  (ArrayList<Usuario>) ois.readObject();
-        return usuarios;
+        
+        for(Usuario u:usuarios){
+            System.out.println(u.getLogin()+u.getPassword());
+        }
+         return usuarios;   
+        
+        
     }
     public Usuario buscarUno (Usuario u)throws Exception{
         File f=new File ("D:/usuario.sql");
