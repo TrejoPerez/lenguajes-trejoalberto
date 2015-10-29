@@ -29,10 +29,6 @@ public class PersistenciaUsuarios2 {
         ObjectInputStream ois = new ObjectInputStream(fis);
         //Se aplica el casting porque se esta regresa un arreglo
         usuarios =  (ArrayList<Usuario>) ois.readObject();
-        
-        for(Usuario u:usuarios){
-            System.out.println(u.getLogin()+u.getPassword());
-        }
          return usuarios;   
         
         

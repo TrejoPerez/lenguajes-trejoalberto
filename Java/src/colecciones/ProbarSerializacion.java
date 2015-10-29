@@ -21,10 +21,13 @@ public class ProbarSerializacion {
                 u.setLogin("Campitos");
                 u.setPassword("Yo-Homero");
             //Ahora fijense bien como usamos la clase persistencia
-                PersistenciaUsuarios2 p2 = new PersistenciaUsuarios2();
+               
                 try{
+                     PersistenciaUsuarios2 p2 = new PersistenciaUsuarios2();
                    // p2.guardar(u);
-                    System.out.println(p2.buscarTodos());                   
+                    for(Usuario u: p2.){
+                        
+                    }
                 }catch(Exception e){
                     System.out.println(e.getMessage());
                 }                  
