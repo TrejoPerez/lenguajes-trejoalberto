@@ -25,9 +25,11 @@ public class ProbarSerializacion {
                 try{
                      PersistenciaUsuarios2 p2 = new PersistenciaUsuarios2();
                    // p2.guardar(u);
-                    for(Usuario u: p2.){
+                    /*
+                     for(Usuario u: p2.buscarTodos()){
                         
                     }
+                    */        
                 }catch(Exception e){
                     System.out.println(e.getMessage());
                 }                  
