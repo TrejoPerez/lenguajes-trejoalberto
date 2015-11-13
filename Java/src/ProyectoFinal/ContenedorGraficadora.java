@@ -25,7 +25,7 @@ public class ContenedorGraficadora extends Canvas{
         g.fillRect(0, 0, getWidth(), getHeight());
         g.setColor(Color.black);        
         g.drawLine(0,getHeight()/2,getWidth(), getHeight()/2);
-        g.drawLine(getWidth(), getWidth(), getHeight(), getWidth()/2);
+        g.drawLine(getWidth()/2,getHeight(),getWidth()/2,0);
     }
     
     
