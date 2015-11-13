@@ -4,7 +4,6 @@
  * and open the template in the editor.
  */
 package Concurrencia;
-
 /**
  *
  * @author T-107
@@ -17,8 +16,18 @@ public class PruebaThread implements Runnable {
         PruebaThread r=new PruebaThread();
         Runnable r2=new PruebaThread();
         Thread t2=new Thread(r2);
+        //Tercer forma de crear Threads esta es la neta!!!
+        //Usando clases internas anonimas = esta dentro de la clase Thread, es como tener unimplements}
+        //Las clases i ternas llevan  un new dentro del constructor
+        Thread  t3 = new Thread(new Runnable(){
+           @Override
+           public void run() {
+               System.out.println("Yo soy un thread como clase interna anonima");
+           }
+        });
         t1.start();
         t2.start();
+        t3.start();
     }
     @Override
     public void run(){
