@@ -7,7 +7,10 @@ package ProyectoFinal;
 
 import java.awt.Canvas;
 import java.awt.Color;
+import java.awt.Event;
 import java.awt.Graphics;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -31,26 +34,41 @@ public class ContenedorGraficadora extends Canvas{
         g.drawLine(getWidth()/2,getHeight(),getWidth()/2,0);
         //Traslada el punto de origen
         g.translate(getWidth()/2, getHeight()/2);
-       /*
-        float x0=-100;
-        float x1=-99;
-        float y0;
-        float y1;
+        g.drawString("Origen de coordenadas", 0, 0);
+       Thread t1 = new Thread(new Runnable(){
+           //Ax^2 + bx + cy +d =0
+            float x0=-100;
+            float x1=-99;
+            float y0;
+            float y1;
+            @Override
+            public void run() {
+                while(true){
+                    //Graficar el seno
+                    for(int i=0;i<=200;i++){
+                        //Factor de apertura
 
-        //Graficar el seno
-       
-        
-        
-        for(int i=0;i<=200;i++){
-            //Factor de apertura
-            
-            y0= -apertura*x0*x0;
-            y1= -apertura*x1*x1;
-            g.drawLine((int)x0, (int)y0, (int) x1, (int) y1);
-            x0++;
-            x1++;
-        }
-        */       
+                        y0= -apertura*x0*x0+10;
+                        y1= -apertura*x1*x1+10;
+                        g.drawLine((int)x0, (int)y0, (int) x1, (int) y1);
+                        x0++;
+                        x1++;
+                    }
+                    
+                try{
+                     Thread.sleep(300);
+                     System.out.println("La idea es esa");
+                 }catch(InterruptedException ex){
+                     Logger.getLogger(ContenedorGraficadora.class.getName()).log(Level.SEVERE,null,ex);
+                 }
+                    
+                }
+                
+            }
+           
+       });
+        t1.start();
+        /*       
         double Xseno=-2*Math.PI-1;
         double Xseno1 =-2*Math.PI;
         double Yseno;
@@ -63,7 +81,18 @@ public class ContenedorGraficadora extends Canvas{
             Xseno++;
             Xseno1++;
         }
-        
+        */
+    }
+
+    @Override
+    public boolean mouseDown(Event evt, int x, int y) {
+        System.out.println("Haz hecho click sobre la grafica");
+        System.err.println("Posicion es ("+x+" "+y+")");
+        return super.mouseDown(evt, x, y); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    private Runnable Runnable() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
     
