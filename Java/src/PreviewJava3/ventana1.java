@@ -28,6 +28,8 @@ public class ventana1 extends javax.swing.JFrame {
                    if(i==20){
                        c=i;
                        dispose();
+                       ventana2 v = new ventana2();
+                       v.setVisible(true);
                    }
                     i--;
                     try {
@@ -36,6 +38,7 @@ public class ventana1 extends javax.swing.JFrame {
                     };
       
                 }
+                System.out.println("soy"+c);
             }
             
         }
@@ -43,7 +46,8 @@ public class ventana1 extends javax.swing.JFrame {
         );
         
          t1.start();
-         System.out.println(""+c);
+         
+         
         
         
         
