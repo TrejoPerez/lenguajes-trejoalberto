@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 package PreviewJava3;
-
+import javax.swing.*;
 /**
  *
  * @author T-107
@@ -15,7 +15,8 @@ public class ventana1 extends javax.swing.JFrame {
     /**
      * Creates new form ventana1
      */
-    public int c=0;
+    public static int var=45;
+    public static int c=0;
     public ventana1() {
         initComponents();
          Thread t1 = new Thread (new Runnable(){
@@ -23,6 +24,7 @@ public class ventana1 extends javax.swing.JFrame {
             @Override
             public void run() {
                 int i=30;   
+                
                 while (i>=0){ 
                     jLabel2.setText(""+i);
                    if(i==20){
@@ -31,6 +33,13 @@ public class ventana1 extends javax.swing.JFrame {
                        ventana2 v = new ventana2();
                        v.setVisible(true);
                    }
+                   if(i<=20){
+                       c=i;
+                       ventana2 v = new ventana2();
+                       v.repaint();
+                   }
+                   
+                    
                     i--;
                     try {
                         Thread.sleep (1000);
@@ -38,7 +47,7 @@ public class ventana1 extends javax.swing.JFrame {
                     };
       
                 }
-                System.out.println("soy"+c);
+                
             }
             
         }

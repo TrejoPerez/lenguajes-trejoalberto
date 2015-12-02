@@ -35,7 +35,8 @@ public class ContenedorGraficadora extends Canvas{
         //Traslada el punto de origen
         g.translate(getWidth()/2, getHeight()/2);
         g.drawString("Origen de coordenadas", 0, 0);
-       Thread t1 = new Thread(new Runnable(){
+       /*
+        Thread t1 = new Thread(new Runnable(){
            //Ax^2 + bx + cy +d =0
             float x0=-100;
             float x1=-99;
@@ -67,8 +68,10 @@ public class ContenedorGraficadora extends Canvas{
             }
            
        });
+        
         t1.start();
-        /*       
+        */
+               
         double Xseno=-2*Math.PI-1;
         double Xseno1 =-2*Math.PI;
         double Yseno;
@@ -81,7 +84,7 @@ public class ContenedorGraficadora extends Canvas{
             Xseno++;
             Xseno1++;
         }
-        */
+        
     }
 
     @Override

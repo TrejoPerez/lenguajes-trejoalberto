@@ -3,14 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package PreviewJava3;
-
-/**
- *
- * @author T-107
- */
-public class EjercicioTipoCeneval {
-    /*
+ /*
         Desarrollar el siguiente programa
         Crear una ventana jFrame con un Jlabe que al ejecutarse aparesca un contador
         que inicie desde 30 y que haga un conteo en retroceso.Al llegar al numero 20, se debe cerrar 
@@ -20,35 +13,43 @@ public class EjercicioTipoCeneval {
         quedarse dicha ventana con el contador en cero.
         El decremento en todo el conteo es de 1 segundo
     */
-   //Variable estatica
-        public  int contador1=0;
-        public  int contador2=0;
+package PreviewJava3;
+
+import java.awt.Canvas;
+import java.awt.Graphics;
+
+/**
+ *
+ * @author T-107
+ */
+public class EjercicioTipoCeneval extends Canvas{
     
-    public EjercicioTipoCeneval() {
-        Thread t1 = new Thread (new Runnable(){
-            
+    public EjercicioTipoCeneval(){
+         public void paint(Graphics g){
+        Thread t1 = new Thread(new Runnable(){
+          int i =30;
             @Override
             public void run() {
-               int  i=0;
-                while (i<=20){ 
-                    System.out.println(i);
-                    i++;
-                    try {
-                        Thread.sleep (1000);
-                    } catch (InterruptedException ex) {
-                    };
-      
+                while(i>=30){
+                    System.out.println(""+i);
+                    i--;
+                try{
+                     Thread.sleep(300);
+                     
+                 }catch(InterruptedException ex){
+                     System.out.println("El error es "+ex);
+                 }
+                    
                 }
-            }
-            
-        }
                 
-        );
+            }
+           
+       });
         
-         t1.start();
-         
+        t1.start();
         
     }
-    
-    
+        
+    }
+   
 }
