@@ -22,34 +22,71 @@ import java.awt.Graphics;
  *
  * @author T-107
  */
-public class EjercicioTipoCeneval extends Canvas{
-    
-    public EjercicioTipoCeneval(){
-         public void paint(Graphics g){
-        Thread t1 = new Thread(new Runnable(){
-          int i =30;
-            @Override
-            public void run() {
-                while(i>=30){
-                    System.out.println(""+i);
-                    i--;
-                try{
-                     Thread.sleep(300);
-                     
-                 }catch(InterruptedException ex){
-                     System.out.println("El error es "+ex);
-                 }
+public class EjercicioTipoCeneval{
+        public static void main(String[] args) {
+            Thread t1 = new Thread(new Runnable(){
+                ventana1 v1 = new ventana1();
+                ventana2 v2 = new ventana2();
+                ventana3 v3 = new ventana3();
+                    
+                
+                @Override
+                public void run(){
+                    int i = 30;
+                    while(i<=30){
+                        System.out.println("soy i "+ i);
+                        v3.etiqueta1.setText(""+i);
+                        if(i==30) {
+                            v3.etiqueta1.setText(""+i);
+                            v3.setVisible(true);
+                        } if(i>20 && i <30){
+                            //v3.etiqueta1.setText(""+i);
+                        }if(i==20){
+                            v3.dispose();
+                            ventana3 v4 = new ventana3();
+                            v4.etiqueta1.setText(""+i);
+                            v2.jLabel1.setText(""+v4.etiqueta1.getText());
+                            v2.setVisible(true);
+                        } if(i>10 && i <20){
+                            v3.etiqueta1.setText(""+i);
+                            v2.jLabel1.setText(""+v3.etiqueta1.getText());
+                        }
+                        try{
+                           Thread.sleep(1000);
+                        }catch(InterruptedException ex){
+                            System.out.println("El error fue "+ ex);
+                        };
+                        i--;
+                    }
                     
                 }
+            });
+            t1.start();
+            /*
+            int i =2;
+            if(i==1){
+                ventana3 v3 = new ventana3();
+                v3.setVisible(true);
+                v3.etiqueta1.setText("el valor de i es "+i);            
+            }else if(i==2){
+                ventana2 v2 = new ventana2();
+                ventana3 v3 = new ventana3();
+                v2.setVisible(true);
+                try{
+                    v3.etiqueta1.setText("Ventana 3 invocada en la ventana 2");
+                    v2.jLabel1.setText(""+v3.etiqueta1.getText());
+                }catch(Exception e){
+                    System.err.println("Sin valor");
+                };
                 
+                //System.out.println("El valor del texto es "+texto);
             }
-           
-       });
-        
-        t1.start();
-        
+             */       
+     
     }
         
-    }
+    
+        
+    
    
 }
