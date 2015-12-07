@@ -29,10 +29,13 @@ public class ventana3 extends javax.swing.JFrame {
     private void initComponents() {
 
         etiqueta1 = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         etiqueta1.setText("Soy tu label de la ventana 3");
+
+        jLabel1.setText("Ventana 3");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -40,15 +43,18 @@ public class ventana3 extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(etiqueta1)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel1)
+                    .addComponent(etiqueta1))
                 .addContainerGap(219, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
+                .addComponent(jLabel1)
+                .addGap(52, 52, 52)
                 .addComponent(etiqueta1)
-                .addContainerGap(275, Short.MAX_VALUE))
+                .addContainerGap(219, Short.MAX_VALUE))
         );
 
         pack();
@@ -91,8 +97,9 @@ public class ventana3 extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public static javax.swing.JLabel etiqueta1;
+    private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
-
+    
     /**
      * @return the jLabel1
      */

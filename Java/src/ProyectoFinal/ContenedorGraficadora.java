@@ -33,6 +33,7 @@ public class ContenedorGraficadora extends Canvas{
         //Eje y
         g.drawLine(getWidth()/2,getHeight(),getWidth()/2,0);
         //Traslada el punto de origen
+        
         g.translate(getWidth()/2, getHeight()/2);
         g.drawString("Origen de coordenadas", 0, 0);
        /*

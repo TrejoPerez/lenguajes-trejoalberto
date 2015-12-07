@@ -4,62 +4,18 @@
  * and open the template in the editor.
  */
 package PreviewJava3;
-import javax.swing.*;
+
 /**
  *
- * @author T-107
+ * @author root
  */
 public class ventana1 extends javax.swing.JFrame {
-    
 
     /**
      * Creates new form ventana1
      */
-    public static int var=45;
-    public static int c=0;
     public ventana1() {
         initComponents();
-         Thread t1 = new Thread (new Runnable(){
-            
-            @Override
-            public void run() {
-                int i=30;   
-                
-                while (i>=0){ 
-                    jLabel2.setText(""+i);
-                   if(i==20){
-                       c=i;
-                       dispose();
-                       ventana2 v = new ventana2();
-                       v.setVisible(true);
-                   }
-                   if(i<=20){
-                       c=i;
-                       ventana2 v = new ventana2();
-                       v.repaint();
-                   }
-                   
-                    
-                    i--;
-                    try {
-                        Thread.sleep (1000);
-                    } catch (InterruptedException ex) {
-                    };
-      
-                }
-                
-            }
-            
-        }
-                
-        );
-        
-         t1.start();
-         
-         
-        
-        
-        
     }
 
     /**
@@ -71,40 +27,37 @@ public class ventana1 extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
-        jLabel2 = new javax.swing.JLabel();
+        etiqueta1 = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jLabel2.setText("jLabel2");
+        etiqueta1.setText("Label ventana1");
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel2)
-                .addContainerGap(356, Short.MAX_VALUE))
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addComponent(jLabel2)
-                .addGap(0, 294, Short.MAX_VALUE))
-        );
+        jLabel1.setText("Ventana 1");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(etiqueta1))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(105, 105, 105)
+                        .addComponent(jLabel1)))
+                .addContainerGap(228, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addContainerGap()
+                .addComponent(jLabel1)
+                .addGap(20, 20, 20)
+                .addComponent(etiqueta1)
+                .addContainerGap(236, Short.MAX_VALUE))
         );
 
         pack();
@@ -146,11 +99,7 @@ public class ventana1 extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JPanel jPanel1;
+    public static javax.swing.JLabel etiqueta1;
+    private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
-
-    private void EjercicioTipoCeneval() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
 }
